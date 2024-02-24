@@ -16,7 +16,7 @@ members = [
 ]
 
 [patch.crates-io]
-halo2_proofs = { git = "https://github.com/girogirolabs/halo2.git", branch = "experiment" }
+halo2_proofs = { path = "../halo2/halo2_proofs" }
 
 # Definition of benchmarks profile to use.
 [profile.bench]

@@ -1,5 +1,5 @@
 use eth_types::Field;
-use halo2::halo2curves::CurveExt;
+use halo2_proofs::halo2curves::CurveExt;
 use halo2_proofs::{
     circuit::{AssignedCell, Layouter, Value},
     halo2curves::{
@@ -14,7 +14,7 @@ use snark_verifier::{
     loader::{
         self,
         halo2::{
-            halo2_wrong_ecc::{self, integer::rns::Rns, maingate::*, EccConfig},
+            ecc::{self, integer::rns::Rns, maingate::*, EccConfig},
             Scalar,
         },
         native::NativeLoader,
@@ -54,7 +54,7 @@ const R_P: usize = 60;
 
 /// `BaseFieldEccChip` with hardcoded `LIMBS` and `BITS` serving as `EccChip`
 /// for `Halo2Loader`.
-pub type EccChip<C> = halo2_wrong_ecc::BaseFieldEccChip<C, LIMBS, BITS>;
+pub type EccChip<C> = ecc::BaseFieldEccChip<C, LIMBS, BITS>;
 /// `Halo2Loader` with hardcoded `EccChip`.
 pub type Halo2Loader<'a, C> = loader::halo2::Halo2Loader<'a, C, EccChip<C>>;
 /// `PoseidonTranscript` with hardcoded parameter with 128-bits security.

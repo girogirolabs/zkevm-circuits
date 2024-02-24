@@ -962,7 +962,6 @@ checksum = "56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b"
 [[package]]
 name = "ecc"
 version = "0.1.0"
-source = "git+https://github.com/girogirolabs/halo2wrong?branch=experiment#59d4a1440d80c85efe4024804f9d2a500aa3e3e5"
 dependencies = [
  "integer",
  "num-bigint",
@@ -975,7 +974,6 @@ dependencies = [
 [[package]]
 name = "ecdsa"
 version = "0.1.0"
-source = "git+https://github.com/girogirolabs/halo2wrong?branch=experiment#59d4a1440d80c85efe4024804f9d2a500aa3e3e5"
 dependencies = [
  "ecc",
  "num-bigint",
@@ -1804,7 +1802,6 @@ dependencies = [
 [[package]]
 name = "halo2_proofs"
 version = "0.3.0"
-source = "git+https://github.com/girogirolabs/halo2.git?branch=experiment#ef4c8cfac3209fa8ca7af0c0c235bd26be208cd5"
 dependencies = [
  "blake2b_simd",
  "ff",
@@ -1842,7 +1839,6 @@ dependencies = [
 [[package]]
 name = "halo2wrong"
 version = "0.1.0"
-source = "git+https://github.com/girogirolabs/halo2wrong?branch=experiment#59d4a1440d80c85efe4024804f9d2a500aa3e3e5"
 dependencies = [
  "halo2_proofs",
  "num-bigint",
@@ -2156,7 +2152,6 @@ dependencies = [
 [[package]]
 name = "integer"
 version = "0.1.0"
-source = "git+https://github.com/girogirolabs/halo2wrong?branch=experiment#59d4a1440d80c85efe4024804f9d2a500aa3e3e5"
 dependencies = [
  "maingate",
  "num-bigint",
@@ -2453,7 +2448,6 @@ checksum = "b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f"
 [[package]]
 name = "maingate"
 version = "0.1.0"
-source = "git+https://github.com/girogirolabs/halo2wrong?branch=experiment#59d4a1440d80c85efe4024804f9d2a500aa3e3e5"
 dependencies = [
  "halo2wrong",
  "num-bigint",
@@ -3977,7 +3971,6 @@ checksum = "e6ecd384b10a64542d77071bd64bd7b231f4ed5940fba55e98c3de13824cf3d7"
 [[package]]
 name = "snark-verifier"
 version = "0.1.1"
-source = "git+https://github.com/girogirolabs/snark-verifier?branch=experiment#eff71b8ebefa2b6bb49787559c72a56b6ffbb4f2"
 dependencies = [
  "ecc",
  "halo2_proofs",

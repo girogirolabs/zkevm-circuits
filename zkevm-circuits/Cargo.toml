@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-halo2_proofs = { git = "https://github.com/girogirolabs/halo2.git", features = ["circuit-params"], branch = "experiment" }
+halo2_proofs = { path = "../../halo2/halo2_proofs", features = ["circuit-params"] }
 num = "0.4"
 sha3 = "0.10"
 array-init = "2.0.0"
@@ -26,14 +26,14 @@ itertools = "0.10.3"
 lazy_static = "1.4"
 log = "0.4"
 env_logger = "0.9"
-ecdsa = { git = "https://github.com/girogirolabs/halo2wrong", branch = "experiment" }
-ecc =       { git = "https://github.com/girogirolabs/halo2wrong", branch = "experiment" }
-maingate =  { git = "https://github.com/girogirolabs/halo2wrong", branch = "experiment" }
-integer =   { git = "https://github.com/girogirolabs/halo2wrong", branch = "experiment" }
+ecdsa = { path = "../../halo2wrong/ecdsa" }
+ecc =       { path = "../../halo2wrong/ecc" }
+maingate =  { path = "../../halo2wrong/maingate" }
+integer =   { path = "../../halo2wrong/integer" }
 libsecp256k1 = "0.7"
 num-bigint = { version = "0.4" }
 rand_chacha = "0.3"
-snark-verifier = { git = "https://github.com/girogirolabs/snark-verifier", branch = "experiment", default-features = false, features = ["loader_halo2", "system_halo2", "loader_evm"], optional = true }
+snark-verifier = { path = "../../snark-verifier/snark-verifier", default-features = false, features = ["loader_halo2", "system_halo2", "loader_evm"], optional = true }
 cli-table = { version = "0.4", optional = true }
 num_enum = "0.5.7"
 serde = { version = "1.0.130", features = ["derive"] }
