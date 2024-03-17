@@ -48,8 +48,17 @@ state_bench: ## Run State Circuit benchmarks
 mpt_bench: ## Run MPT Circuit benchmarks
 	@cargo test --profile bench bench_mpt_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
 
-packed_multi_keccak_bench: ## Run Packed Multi Keccak Circuit benchmarks
-	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
+keccak_single: ## Run Packed Multi Keccak Circuit benchmarks
+	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_single -p circuit-benchmarks --features benches  -- --nocapture
+
+keccak_leader: ## Run Packed Multi Keccak Circuit benchmarks
+	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_leader -p circuit-benchmarks --features benches  -- --nocapture
+
+keccak_worker_0: ## Run Packed Multi Keccak Circuit benchmarks
+	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_worker_0 -p circuit-benchmarks --features benches  -- --nocapture
+
+keccak_worker_1: ## Run Packed Multi Keccak Circuit benchmarks
+	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_worker_1 -p circuit-benchmarks --features benches  -- --nocapture
 
 bytecode_bench: ## Run Bytecode Circuit benchmarks
 	@cargo test --profile bench bench_bytecode_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
