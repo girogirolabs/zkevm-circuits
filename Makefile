@@ -39,8 +39,17 @@ test-all: fmt doc clippy test_doc test_benches test ## Run all the CI checks loc
 super_bench: ## Run Super Circuit benchmarks
 	@cargo test --profile bench bench_super_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
 
-evm_bench: ## Run Evm Circuit benchmarks
-	@cargo test --profile bench bench_evm_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
+evm_single: ## Run Evm Circuit benchmarks
+	@cargo test --profile bench bench_evm_circuit_prover_single -p circuit-benchmarks --features benches  -- --nocapture
+
+evm_leader: ## Run Evm Circuit benchmarks
+	@cargo test --profile bench bench_evm_circuit_prover_leader -p circuit-benchmarks --features benches  -- --nocapture
+
+evm_worker_0: ## Run Evm Circuit benchmarks
+	@cargo test --profile bench bench_evm_circuit_prover_worker_0 -p circuit-benchmarks --features benches  -- --nocapture
+
+evm_worker_1: ## Run Evm Circuit benchmarks
+	@cargo test --profile bench bench_evm_circuit_prover_worker_1 -p circuit-benchmarks --features benches  -- --nocapture
 
 state_bench: ## Run State Circuit benchmarks
 	@cargo test --profile bench bench_state_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture

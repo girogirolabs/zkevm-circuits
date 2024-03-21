@@ -271,11 +271,13 @@ mod tests {
         end_timer!(start2);
     }
 
+    #[cfg_attr(not(feature = "benches"), ignore)]
     #[test]
     fn bench_packed_multi_keccak_circuit_prover_worker_0() {
         bench_packed_multi_keccak_circuit_worker(0);
     }
 
+    #[cfg_attr(not(feature = "benches"), ignore)]
     #[test]
     fn bench_packed_multi_keccak_circuit_prover_worker_1() {
         bench_packed_multi_keccak_circuit_worker(1);
