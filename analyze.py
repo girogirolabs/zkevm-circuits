@@ -36,12 +36,13 @@ def parse_logs(logs_path):
     #         break
 
 if __name__ == "__main__":
-    logs = [
-        {"name": "leader", "path": "./benchmark/out_leader.txt"},
-        {"name": "worker_0", "path": "./benchmark/out_worker_0.txt"},
-        {"name": "worker_1", "path": "./benchmark/out_worker_1.txt"},
-        {"name": "single", "path": "./benchmark/out_single.txt"},
-    ]
-    for log in logs:
-        print(log["name"])
-        parse_logs(log["path"])
+    # logs = [
+    #     {"name": "leader", "path": "./benchmark/out_leader.txt"},
+    #     {"name": "worker_0", "path": "./benchmark/out_worker_0.txt"},
+    #     {"name": "worker_1", "path": "./benchmark/out_worker_1.txt"},
+    #     {"name": "single", "path": "./benchmark/out_single.txt"},
+    # ]
+    # for log in logs:
+    #     print(log["name"])
+    #     parse_logs(log["path"])
+    parse_logs("./out.txt")
