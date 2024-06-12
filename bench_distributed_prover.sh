@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Set variables for thread counts
-LEADER_THREADS=4
-WORKER_THREADS=2
-SINGLE_NODE_THREADS=8
+LEADER_THREADS=24
+WORKER_THREADS=12
+SINGLE_NODE_THREADS=48
 
 # Ensure ./benchmark directory exists
 mkdir -p ./benchmark
@@ -26,7 +26,7 @@ echo "Waiting for worker and leader processes to complete..."
 wait $WORKER_PID0 $WORKER_PID1 $LEADER_PID
 
 # Start a single-node process
-echo "Starting single-node process..."
-RAYON_NUM_THREADS=$SINGLE_NODE_THREADS make keccak_single > benchmark/out_single.txt 2>&1
+# echo "Starting single-node process..."
+# RAYON_NUM_THREADS=$SINGLE_NODE_THREADS make keccak_single > benchmark/out_single.txt 2>&1
 
-echo "Benchmark completed."
+# echo "Benchmark completed."

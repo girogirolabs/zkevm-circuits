@@ -20,7 +20,7 @@ halo2_proofs = { path = "../halo2/halo2_proofs" }
 
 # Definition of benchmarks profile to use.
 [profile.bench]
-opt-level = 3
+opt-level = 2
 debug = false
 debug-assertions = false
 overflow-checks = false
