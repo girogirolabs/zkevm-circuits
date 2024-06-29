@@ -1,0 +1,32 @@
+[package]
+name = "distributed-prover"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+halo2_proofs = { path = "../../halo2/halo2_proofs" }
+ark-std = { version = "0.3", features = ["print-trace"] }
+zkevm-circuits = { path = "../zkevm-circuits", features = ["test-circuits"] }
+rand_xorshift = "0.3"
+rand = "0.8"
+
+[profile.dev]
+opt-level = 0
+debug = true
+overflow-checks = true
+lto = false
+debug-assertions = true
+panic = 'unwind'
+incremental = true
+
+[profile.release]
+opt-level = 3
+debug = false
+overflow-checks = false
+lto = true
+debug-assertions = false
+panic = 'abort'
+incremental = false

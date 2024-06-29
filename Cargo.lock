@@ -954,6 +954,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "distributed-prover"
+version = "0.1.0"
+dependencies = [
+ "ark-std",
+ "halo2_proofs",
+ "rand",
+ "rand_xorshift",
+ "zkevm-circuits",
+]
+
+[[package]]
 name = "dunce"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1816,6 +1827,8 @@ dependencies = [
  "rand_chacha",
  "rand_core",
  "rayon",
+ "serde",
+ "serde_json",
  "sha3 0.9.1",
  "tracing",
  "zmq",

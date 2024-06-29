@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# Do not ignore directories so we can match files inside them
+!*/
+
+# Do not ignore the following files
+!.gitignore
+!network_config.json
