@@ -116,10 +116,13 @@ pub(crate) fn prove(prover_index: usize) {
     ).unwrap();
     end_timer!(timer);
 
-    let proof = transcript.finalize();
-    let timer = start_timer!(|| "Artifact serialization");
-    write_proof(CIRCUIT_NAME, &proof);
-    end_timer!(timer);
+    // Only leader should serialize the proof
+    if prover_index == 0 {
+        let proof = transcript.finalize();
+        let timer = start_timer!(|| "Artifact serialization");
+        write_proof(CIRCUIT_NAME, &proof);
+        end_timer!(timer);
+    }
 }
 
 pub(crate) fn prove_local() {
