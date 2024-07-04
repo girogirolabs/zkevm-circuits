@@ -9,6 +9,9 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 halo2_proofs = { path = "../../halo2/halo2_proofs" }
 ark-std = { version = "0.3", features = ["print-trace"] }
+bus-mapping = { path = "../bus-mapping",  features = ["test"] }
+mock = { path="../mock" }
+eth-types = { path = "../eth-types" }
 zkevm-circuits = { path = "../zkevm-circuits", features = ["test-circuits"] }
 rand_xorshift = "0.3"
 rand = "0.8"

@@ -25,17 +25,17 @@ fn main() {
 
     match command {
         Command::Setup => {
-            circuits::keccak::setup();
+            circuits::evm::setup();
         }
         Command::Prove => {
             let prover_index = args.get(2).map(|s| s.parse().unwrap()).unwrap_or(0);
-            circuits::keccak::prove(prover_index);
+            circuits::evm::prove(prover_index);
         }
         Command::ProveLocal => {
-            circuits::keccak::prove_local();
+            circuits::evm::prove_local();
         }
         Command::Verify => {
-            circuits::keccak::verify();
+            circuits::evm::verify();
         }
     }
 }
