@@ -37,15 +37,11 @@ use crate::util::constants::RNG_SEED;
 pub(crate) const CIRCUIT_NAME: &str = "evm";
 const CIRCUIT_DEGREE: u32 = 18;
 
-// What is the <Fr> notation?
-// What is the pub(crate) notation?
 pub(crate) fn circuit() -> EvmCircuit<Fr> { 
     let timer = start_timer!(|| "Create circuit");  // What is the "||" Notation?
-
     let empty_data: GethData = TestContext::<0, 0>::new(None, |_| {}, |_, _| {}, |b, _| b)
         .unwrap()
         .into();
-
     let mut builder =
         BlockData::new_from_geth_data_with_params(empty_data.clone(), FixedCParams::default())
             .new_circuit_input_builder();
@@ -55,9 +51,7 @@ pub(crate) fn circuit() -> EvmCircuit<Fr> {
         .unwrap();
 
     let block = block_convert(&builder).unwrap();
-
     let circuit = TestEvmCircuit::<Fr>::new(block);
-
     end_timer!(timer);
 
     circuit
@@ -80,19 +74,17 @@ pub(crate) fn setup() {
 
     // Read Network Configuration
     let timer = start_timer!(|| "Read Network Configuration");
-    let network_config = read_workload_config(CIRCUIT_NAME);
+    let network_config = read_network_config(CIRCUIT_NAME);
     end_timer!(timer);
     let num_prover = network_config.num_prover();
 
     // Generate Workload Configuration
     let timer = start_timer!(|| "Generate Workload Configuration");
-    // What is in a worklaod config? What is G1Affine? Is it an algorithm?
     let workload_config = WorkloadConfig::new_even_distribution::<G1Affine>(vk.cs(), num_prover);
-    end_timer!(timer);
+    end_timer!(timer);  
 
     // Generate Proving Key
     let timer = start_timer!(|| "Generate Proving Key");
-    // Why we need to clone the vk to generate pk? Why can't we pass &vk to make it immutable
     let pk = keygen_pk(&general_params, vk.clone(), &circuit).unwrap();
     end_timer!(timer);
 
@@ -109,17 +101,11 @@ pub(crate) fn setup() {
 pub(crate) fn prove(prover_index: usize) {
     let rng = XorShiftRng::from_seed(RNG_SEED);
     let circuit = circuit();
-    // What is special about blake2b here and why are we using this instead of other hashing?
-    // What is <_, G1Affine, Challenge255<_>> in between ::s?
-    // What does this transcript contain?
     let mut transcript = Blake2bWrite::<_, G1Affine, Challenge255<_>>::init(vec![]);
 
     let timer = start_timer!(|| "Artifact Deserialization");
     let general_params = read_params_kzg(CIRCUIT_DEGREE, false);
-    
-    // TODO: check if the EVM circuit has the right syntax
     let mut pk = read_pk::<EvmCircuit<Fr>>(CIRCUIT_NAME, circuit.params());
-
     let network_config = read_network_config(CIRCUIT_NAME);
     let workload_config = read_workload_config(CIRCUIT_NAME);
     end_timer!(timer);
@@ -148,6 +134,14 @@ pub(crate) fn prove(prover_index: usize) {
         prover_index,
     ).unwrap();
     end_timer!(timer);
+
+    // Only leader should serialize the proof
+    if prover_index == 0 {
+        let proof = transcript.finalize();
+        let timer = start_timer!(|| "Artifact serialization");
+        write_proof(CIRCUIT_NAME, &proof);
+        end_timer!(timer);
+    }
 }
 
 pub(crate) fn prove_local() {
@@ -157,7 +151,6 @@ pub(crate) fn prove_local() {
 
     let timer = start_timer!(|| "Artifact deserialization");
     let general_params = read_params_kzg(CIRCUIT_DEGREE, false);
-    // TODO: check if the EVM circuit has the right syntax
     let pk = read_pk::<EvmCircuit<Fr>>(CIRCUIT_NAME, circuit.params());
     end_timer!(timer);
 
@@ -194,7 +187,6 @@ pub(crate) fn verify() {
     let proof = read_proof(CIRCUIT_NAME);
     end_timer!(timer);
 
-    // What does this verifier transcript contain?
     let mut verifier_transcript = Blake2bRead::<_, G1Affine, Challenge255<_>>::init(&proof[..]);
     let strategy = SingleStrategy::new(&general_params);
 
