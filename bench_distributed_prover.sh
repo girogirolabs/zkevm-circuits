@@ -2,7 +2,7 @@
 
 # Set variables for thread counts
 LEADER_THREADS=24
-WORKER_THREADS=12
+WORKER_THREADS=24
 SINGLE_NODE_THREADS=48
 
 # Ensure ./benchmark directory exists
