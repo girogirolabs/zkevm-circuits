@@ -8,7 +8,7 @@ use super::cell_manager::{
 };
 
 #[derive(Clone, Debug, Default)]
-pub(crate) struct CMFixedWidthStrategyDistribution(HashMap<CellType, Vec<Column<Advice>>>);
+pub(crate) struct CMFixedWidthStrategyDistribution(BTreeMap<CellType, Vec<Column<Advice>>>);
 
 impl CMFixedWidthStrategyDistribution {
     pub(crate) fn add(&mut self, cell_type: CellType, advice: Column<Advice>) {
