@@ -3,6 +3,11 @@ use std::env;
 mod circuits;
 mod util;
 
+enum Circuit {
+    EVM,
+    Keccak,
+}
+
 enum Command {
     Setup,
     Prove,
@@ -12,27 +17,28 @@ enum Command {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let circuit_name = args.get(1).map(|s| s.as_str()).unwrap();
+
+    let circuit = match args.get(1).map(|s| s.as_str()) {
+        Some("evm") => Circuit::EVM,
+        Some("keccak") => Circuit::Keccak,
+        _ => {
+            eprintln!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify>", args[0]);
+            std::process::exit(1);
+        }
+    };
     let command = match args.get(2).map(|s| s.as_str()) {
         Some("setup") => Command::Setup,
         Some("prove") => Command::Prove,
         Some("prove-local") => Command::ProveLocal,
         Some("verify") => Command::Verify,
         _ => {
-            eprintln!("Usage: {} <evm|keccak> <setup|prove|verify>", args[0]);
+            eprintln!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify>", args[0]);
             std::process::exit(1);
         }
     };
 
-    println!("circuit name: {}; command: {};", circuit_name, match command {
-        Command::Setup => "setup",
-        Command::Prove => "prove",
-        Command::ProveLocal => "prove-local",
-        Command::Verify => "verify",
-    });
-    
-    match circuit_name {
-        "evm" => match command {
+    match circuit {
+        Circuit::EVM => match command {
             Command::Setup => {
                 circuits::evm::setup();
             }
@@ -47,7 +53,7 @@ fn main() {
                 circuits::evm::verify();
             }
         },
-        "keccak" => match command {
+        Circuit::Keccak => match command {
             Command::Setup => {
                 circuits::keccak::setup();
             }
@@ -61,11 +67,6 @@ fn main() {
             Command::Verify => {
                 circuits::keccak::verify();
             }
-        }
-        _ => {
-            eprintln!("Unknown module: {}", circuit_name);
-            eprintln!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify>", args[0]);
-            std::process::exit(1); 
         }
     }
 }

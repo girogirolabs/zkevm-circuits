@@ -26,10 +26,7 @@ use halo2_proofs::{
 use mock::TestContext;
 use rand::SeedableRng;
 use rand_xorshift::XorShiftRng;
-use zkevm_circuits::{
-    evm_circuit::{EvmCircuit, witness::block_convert, TestEvmCircuit},
-    util::SubCircuit
-};
+use zkevm_circuits::evm_circuit::{EvmCircuit, witness::block_convert, TestEvmCircuit};
 
 use crate::util::artifacts::*;
 use crate::util::constants::RNG_SEED;
@@ -37,19 +34,11 @@ use crate::util::constants::RNG_SEED;
 pub(crate) const CIRCUIT_NAME: &str = "evm";
 const CIRCUIT_DEGREE: u32 = 18;
 
-pub(crate) fn circuit() -> EvmCircuit<Fr> { 
-    let timer = start_timer!(|| "Create circuit");  // What is the "||" Notation?
-    let empty_data: GethData = TestContext::<0, 0>::new(None, |_| {}, |_, _| {}, |b, _| b)
-        .unwrap()
-        .into();
-    let mut builder =
-        BlockData::new_from_geth_data_with_params(empty_data.clone(), FixedCParams::default())
-            .new_circuit_input_builder();
-
-    builder
-        .handle_block(&empty_data.eth_block, &empty_data.geth_traces)
-        .unwrap();
-
+pub(crate) fn circuit() -> EvmCircuit<Fr> {
+    let timer = start_timer!(|| "Create circuit");
+    let empty_data: GethData = TestContext::<0, 0>::new(None, |_| {}, |_, _| {}, |b, _| b).unwrap().into();
+    let mut builder = BlockData::new_from_geth_data_with_params(empty_data.clone(), FixedCParams::default()).new_circuit_input_builder();
+    builder.handle_block(&empty_data.eth_block, &empty_data.geth_traces).unwrap();
     let block = block_convert(&builder).unwrap();
     let circuit = TestEvmCircuit::<Fr>::new(block);
     end_timer!(timer);
@@ -64,7 +53,7 @@ pub(crate) fn setup() {
     let timer = start_timer!(|| "Set up params");
     let mut rng = XorShiftRng::from_seed(RNG_SEED);
     let general_params = ParamsKZG::<Bn256>::setup(CIRCUIT_DEGREE, &mut rng);
-    let verifier_params = general_params.verifier_params().clone();     // What's the purpose of cloning here?
+    let verifier_params = general_params.verifier_params();
     end_timer!(timer);
 
     // Generate Verification Key
@@ -81,7 +70,7 @@ pub(crate) fn setup() {
     // Generate Workload Configuration
     let timer = start_timer!(|| "Generate Workload Configuration");
     let workload_config = WorkloadConfig::new_even_distribution::<G1Affine>(vk.cs(), num_prover);
-    end_timer!(timer);  
+    end_timer!(timer);
 
     // Generate Proving Key
     let timer = start_timer!(|| "Generate Proving Key");
