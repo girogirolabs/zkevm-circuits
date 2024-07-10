@@ -1,12 +1,13 @@
 use std::env;
 
-mod circuits;
-mod util;
-
-enum Circuit {
-    EVM,
-    Keccak,
-}
+use circuit_helper::{
+    Circuit,
+    circuits::{
+        common::CircuitHelper,
+        evm::EvmCircuitHelper,
+        keccak::KeccakCircuitHelper,
+    }
+};
 
 enum Command {
     Setup,
@@ -17,12 +18,13 @@ enum Command {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let usage = format!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify> [prover_index]", args[0]);
 
     let circuit = match args.get(1).map(|s| s.as_str()) {
         Some("evm") => Circuit::EVM,
         Some("keccak") => Circuit::Keccak,
         _ => {
-            eprintln!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify>", args[0]);
+            eprintln!("{}", usage);
             std::process::exit(1);
         }
     };
@@ -32,7 +34,7 @@ fn main() {
         Some("prove-local") => Command::ProveLocal,
         Some("verify") => Command::Verify,
         _ => {
-            eprintln!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify>", args[0]);
+            eprintln!("{}", usage);
             std::process::exit(1);
         }
     };
@@ -40,32 +42,32 @@ fn main() {
     match circuit {
         Circuit::EVM => match command {
             Command::Setup => {
-                circuits::evm::setup();
+                EvmCircuitHelper::setup();
             }
             Command::Prove => {
                 let prover_index = args.get(3).map(|s| s.parse().unwrap()).unwrap_or(0);
-                circuits::evm::prove(prover_index);
+                EvmCircuitHelper::prove(prover_index);
             }
             Command::ProveLocal => {
-                circuits::evm::prove_local();
+                EvmCircuitHelper::prove_local();
             }
             Command::Verify => {
-                circuits::evm::verify();
+                EvmCircuitHelper::verify();
             }
         },
         Circuit::Keccak => match command {
             Command::Setup => {
-                circuits::keccak::setup();
+                KeccakCircuitHelper::setup();
             }
             Command::Prove => {
                 let prover_index = args.get(3).map(|s| s.parse().unwrap()).unwrap_or(0);
-                circuits::keccak::prove(prover_index);
+                KeccakCircuitHelper::prove(prover_index);
             }
             Command::ProveLocal => {
-                circuits::keccak::prove_local();
+                KeccakCircuitHelper::prove_local();
             }
             Command::Verify => {
-                circuits::keccak::verify();
+                KeccakCircuitHelper::verify();
             }
         }
     }

@@ -152,8 +152,7 @@ pub(crate) fn read_network_config(circuit_name: &str) -> NetworkConfig {
     NetworkConfig::read(&mut reader).unwrap()
 }
 
-#[allow(dead_code)]
-pub(crate) fn write_network_config(
+pub fn write_network_config(
     circuit_name: &str,
     config: &NetworkConfig,
 ) {
@@ -168,7 +167,7 @@ pub(crate) fn read_workload_config(circuit_name: &str) -> WorkloadConfig {
     WorkloadConfig::read(&mut reader).unwrap()
 }
 
-pub(crate) fn write_workload_config(
+pub fn write_workload_config(
     circuit_name: &str,
     config: &WorkloadConfig,
 ) {

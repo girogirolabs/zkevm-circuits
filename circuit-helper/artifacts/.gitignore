@@ -7,3 +7,4 @@
 # Do not ignore the following files
 !.gitignore
 !network_config.json
+!workload_config.json
