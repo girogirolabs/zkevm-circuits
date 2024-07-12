@@ -1,5 +1,7 @@
 use std::env;
 
+use env_logger::{Builder, Target};
+
 use circuit_helper::{
     Circuit,
     circuits::{
@@ -17,6 +19,10 @@ enum Command {
 }
 
 fn main() {
+    let mut builder = Builder::from_default_env();
+    builder.target(Target::Stdout);
+    builder.init();
+
     let args: Vec<String> = env::args().collect();
     let usage = format!("Usage: {} <evm|keccak> <setup|prove|prove-local|verify> [prover_index]", args[0]);
 

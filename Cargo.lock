@@ -972,6 +972,7 @@ name = "distributed-prover"
 version = "0.1.0"
 dependencies = [
  "circuit-helper",
+ "env_logger",
 ]
 
 [[package]]
@@ -1834,6 +1835,7 @@ dependencies = [
  "ff",
  "group",
  "halo2curves",
+ "log",
  "rand_chacha",
  "rand_core",
  "rayon",
