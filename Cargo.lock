@@ -508,13 +508,13 @@ dependencies = [
 name = "circuit-helper"
 version = "0.1.0"
 dependencies = [
- "ark-std",
  "bus-mapping",
  "eth-types",
  "halo2_proofs",
  "mock",
  "rand",
  "rand_xorshift",
+ "serde",
  "zkevm-circuits",
 ]
 

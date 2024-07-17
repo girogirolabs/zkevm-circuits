@@ -52,13 +52,13 @@ fn main() {
             }
             Command::Prove => {
                 let prover_index = args.get(3).map(|s| s.parse().unwrap()).unwrap_or(0);
-                EvmCircuitHelper::prove(prover_index);
+                EvmCircuitHelper::prove(prover_index).unwrap();
             }
             Command::ProveLocal => {
-                EvmCircuitHelper::prove_local();
+                EvmCircuitHelper::prove_local().unwrap();
             }
             Command::Verify => {
-                EvmCircuitHelper::verify();
+                EvmCircuitHelper::verify().unwrap();
             }
         },
         Circuit::Keccak => match command {
@@ -67,13 +67,13 @@ fn main() {
             }
             Command::Prove => {
                 let prover_index = args.get(3).map(|s| s.parse().unwrap()).unwrap_or(0);
-                KeccakCircuitHelper::prove(prover_index);
+                KeccakCircuitHelper::prove(prover_index).unwrap();
             }
             Command::ProveLocal => {
-                KeccakCircuitHelper::prove_local();
+                KeccakCircuitHelper::prove_local().unwrap();
             }
             Command::Verify => {
-                KeccakCircuitHelper::verify();
+                KeccakCircuitHelper::verify().unwrap();
             }
         }
     }
