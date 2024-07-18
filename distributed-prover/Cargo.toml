@@ -9,21 +9,3 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 circuit-helper = { path = "../circuit-helper"  }
 env_logger = "0.9"
-
-[profile.dev]
-opt-level = 0
-debug = true
-overflow-checks = true
-lto = false
-debug-assertions = true
-panic = 'unwind'
-incremental = true
-
-[profile.release]
-opt-level = 3
-debug = false
-overflow-checks = false
-lto = true
-debug-assertions = false
-panic = 'abort'
-incremental = false
