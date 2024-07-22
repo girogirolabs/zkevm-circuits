@@ -4,7 +4,7 @@ use halo2_proofs::{
         create_proof as create_proof_local,
         distributed_prover::prover::create_proof as create_proof_distributed,
         keygen_pk, keygen_vk, verify_proof,
-        Circuit, ConstraintSystem, Error,
+        Circuit, ConstraintSystem, VerifyingKey, Error,
     },
     poly::{
         commitment::ParamsProver,
@@ -19,6 +19,7 @@ use halo2_proofs::{
         Challenge255,
         TranscriptReadBuffer, TranscriptWriterBuffer,
     },
+    SerdeFormat,
     timer::Timer,
 };
 use rand::SeedableRng;
@@ -35,6 +36,22 @@ pub trait CircuitHelper
     const RNG_SEED: [u8; 16];
 
     fn circuit() -> Self::ConcreteCircuit;
+
+    fn vk_bytes() -> Vec<u8> {
+        let vk = read_vk::<Self::ConcreteCircuit>(&Self::NAME, Self::circuit().params());
+        let mut vk_bytes = vec![];
+        vk.write(&mut vk_bytes, SerdeFormat::RawBytes).unwrap();
+        vk_bytes
+    }
+
+    fn constraint_system_from_vk_bytes(mut vk_bytes: &[u8]) -> ConstraintSystem<Fr> {
+        let vk = VerifyingKey::<G1Affine>::read::<_, Self::ConcreteCircuit>(
+            &mut vk_bytes,
+            SerdeFormat::RawBytes,
+            Self::circuit().params(),
+        ).unwrap();
+        vk.cs().clone()
+    }
 
     fn constraint_system() -> ConstraintSystem<Fr> {
         let vk = read_vk::<Self::ConcreteCircuit>(&Self::NAME, Self::circuit().params());
