@@ -58,28 +58,37 @@ pub trait CircuitHelper
         vk.cs().clone()
     }
 
+    fn setup_required() -> bool {
+        !params_kzg_exists(Self::DEGREE, false) ||
+        !params_kzg_exists(Self::DEGREE, true) ||
+        !vk_exists(Self::NAME) ||
+        !pk_exists(Self::NAME)
+    }
+
     fn setup() {
-        let circuit = Self::circuit();
-        let timer = Timer::new("set up params");
-        let mut rng = XorShiftRng::from_seed(Self::RNG_SEED);
-        let general_params = ParamsKZG::<Bn256>::setup(Self::DEGREE, &mut rng);
-        let verifier_params = general_params.verifier_params().clone();
-        timer.end();
+        if Self::setup_required() {
+            let circuit = Self::circuit();
+            let timer = Timer::new("set up params");
+            let mut rng = XorShiftRng::from_seed(Self::RNG_SEED);
+            let general_params = ParamsKZG::<Bn256>::setup(Self::DEGREE, &mut rng);
+            let verifier_params = general_params.verifier_params().clone();
+            timer.end();
 
-        let timer = Timer::new("generate verfication key");
-        let vk = keygen_vk(&general_params, &circuit).unwrap();
-        timer.end();
+            let timer = Timer::new("generate verfication key");
+            let vk = keygen_vk(&general_params, &circuit).unwrap();
+            timer.end();
 
-        let timer = Timer::new("generate proving key");
-        let pk = keygen_pk(&general_params, vk.clone(), &circuit).unwrap();
-        timer.end();
+            let timer = Timer::new("generate proving key");
+            let pk = keygen_pk(&general_params, vk.clone(), &circuit).unwrap();
+            timer.end();
 
-        let timer = Timer::new("artifact serialization");
-        write_params_kzg(Self::DEGREE, &general_params, false);
-        write_params_kzg(Self::DEGREE, &verifier_params, true);
-        write_vk(Self::NAME, &vk);
-        write_pk(Self::NAME, &pk);
-        timer.end();
+            let timer = Timer::new("artifact serialization");
+            write_params_kzg(Self::DEGREE, &general_params, false);
+            write_params_kzg(Self::DEGREE, &verifier_params, true);
+            write_vk(Self::NAME, &vk);
+            write_pk(Self::NAME, &pk);
+            timer.end();
+        }
     }
 
     fn prove(prover_index: usize) -> Result<(), Error> {

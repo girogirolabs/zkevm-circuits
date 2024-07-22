@@ -1,5 +1,6 @@
 use std:: {
     fs::File,
+    path::Path,
     io::{BufReader, BufWriter, Read, Write},
 };
 use halo2_proofs::{
@@ -87,6 +88,13 @@ pub(crate) fn read_params_kzg(
     ParamsKZG::<Bn256>::read_custom(&mut reader, SerdeFormat::RawBytes).unwrap()
 }
 
+pub(crate) fn params_kzg_exists(
+    degree: u32,
+    is_verifier_params: bool,
+) -> bool {
+    Path::exists(&path::params_kzg(degree, is_verifier_params))
+}
+
 pub(crate) fn read_pk<ConcreteCircuit: Circuit<Fr>> (
     circuit_name: &str,
     circuit_params: ConcreteCircuit::Params,
@@ -107,6 +115,10 @@ pub(crate) fn write_pk(
     let f = File::create(path::pk(circuit_name)).unwrap();
     let mut writer = BufWriter::new(f);
     pk.write(&mut writer, SerdeFormat::RawBytes).unwrap();
+}
+
+pub(crate) fn pk_exists(circuit_name: &str) -> bool {
+    Path::exists(&path::pk(circuit_name))
 }
 
 pub(crate) fn read_vk<ConcreteCircuit: Circuit<Fr>>(
@@ -130,6 +142,10 @@ pub(crate) fn write_vk(
     let f = File::create(path::vk(circuit_name)).unwrap();
     let mut writer = BufWriter::new(f);
     vk.write(&mut writer, SerdeFormat::RawBytes).unwrap();
+}
+
+pub(crate) fn vk_exists(circuit_name: &str) -> bool {
+    Path::exists(&path::vk(circuit_name))
 }
 
 pub(crate) fn write_proof(circuit_name: &str, proof: &[u8]) {
