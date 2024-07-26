@@ -98,13 +98,9 @@ pub trait CircuitHelper
 
         let timer = Timer::new("artifact deserialization");
         let general_params = read_params_kzg(Self::DEGREE, false);
-        let mut pk = read_pk::<Self::ConcreteCircuit>(&Self::NAME, circuit.params());
+        let pk = read_pk::<Self::ConcreteCircuit>(&Self::NAME, circuit.params());
         let network_config = read_network_config(Self::NAME);
         let workload_config = read_workload_config(Self::NAME);
-        timer.end();
-
-        let timer = Timer::new("evaluator configuration");
-        pk.configure_evalutor(workload_config.for_prover(prover_index));
         timer.end();
 
         let timer = Timer::new(&format!("Prover {} create_proof", prover_index));
