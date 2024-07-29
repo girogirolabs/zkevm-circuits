@@ -1,0 +1,161 @@
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start artifact deserialization
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post absorb:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 2
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 7
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post padding:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 10
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post theta:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 14
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 38
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post rho/pi:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 53
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 191
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post chi:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 52
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 195
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post squeeze:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 198
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Degree: 4
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Minimum rows: 61
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Total Lookups: 123
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Total Columns: 198
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] num unused cells: 229
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size absorb: 4
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size theta: 2
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size theta c: 2
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size theta t: 3
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size rho/pi: 3
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size chi base: 3
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] uniform part sizes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+[2024-07-28T07:38:41Z DEBUG halo2_proofs::plonk] vk.transcript_repr = 0x1506e2979f2dfa8aedf1b223bc7b3280858909746715da15190e162825f96e72
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] end (58ms) artifact deserialization
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start Prover 0 create_proof
+[2024-07-28T07:38:41Z INFO  halo2_proofs::plonk::prover] number of circuit instances: 1
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post absorb:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 2
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 7
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post padding:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 10
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post theta:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 14
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 38
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post rho/pi:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 53
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 191
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post chi:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 52
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 195
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] - Post squeeze:
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Columns: 198
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Degree: 4
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Minimum rows: 61
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Total Lookups: 123
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] Total Columns: 198
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] num unused cells: 229
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size absorb: 4
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size theta: 2
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size theta c: 2
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size theta t: 3
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size rho/pi: 3
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] part_size chi base: 3
+[2024-07-28T07:38:41Z DEBUG zkevm_circuits::keccak_circuit] uniform part sizes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start construct instance polys
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] end (0ms) construct instance polys
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start construct/commit advice and generate challenge
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start phase 0
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start instance 0
+[2024-07-28T07:38:41Z INFO  halo2_proofs::timer] start synthesize circuit
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: None }
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: None }
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: None }
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [c5, d2, 46, 1, 86, f7, 23, 3c, 92, 7e, 7d, b2, dc, c7, 3, c0, e5, 0, b6, 53, ca, 82, 27, 3b, 7b, fa, d8, 4, 5d, 85, a4, 70]
+[2024-07-28T07:38:42Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x0000000000000000000000000000000000000000000000000000000000000000) }
+[2024-07-28T07:38:42Z INFO  halo2_proofs::timer] end (700ms) synthesize circuit
+[2024-07-28T07:38:42Z INFO  halo2_proofs::timer] start compute advice commitments
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] end (1075ms) compute advice commitments
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] end (1804ms) instance 0
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] start generate challenges
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] end (0ms) generate challenges
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] end (1804ms) phase 0
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] start phase 1
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] start instance 0
+[2024-07-28T07:38:43Z INFO  halo2_proofs::timer] start synthesize circuit
+[2024-07-28T07:38:43Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T07:38:43Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x212f93f5c0b13790f0487796742214d6f4d0167270a8257f5c420b061b9d07b4) }
+[2024-07-28T07:38:44Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T07:38:44Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x212f93f5c0b13790f0487796742214d6f4d0167270a8257f5c420b061b9d07b4) }
+[2024-07-28T07:38:44Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T07:38:44Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x212f93f5c0b13790f0487796742214d6f4d0167270a8257f5c420b061b9d07b4) }
+[2024-07-28T07:38:44Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [c5, d2, 46, 1, 86, f7, 23, 3c, 92, 7e, 7d, b2, dc, c7, 3, c0, e5, 0, b6, 53, ca, 82, 27, 3b, 7b, fa, d8, 4, 5d, 85, a4, 70]
+[2024-07-28T07:38:44Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x0000000000000000000000000000000000000000000000000000000000000000) }
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] end (687ms) synthesize circuit
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] start compute advice commitments
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] end (21ms) compute advice commitments
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] end (713ms) instance 0
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] start generate challenges
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] end (0ms) generate challenges
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] end (713ms) phase 1
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] end (2522ms) construct/commit advice and generate challenge
+[2024-07-28T07:38:44Z INFO  halo2_proofs::timer] start construct/commit permuted values for lookups
+[2024-07-28T07:38:49Z INFO  halo2_proofs::timer] end (5035ms) construct/commit permuted values for lookups
+[2024-07-28T07:38:49Z INFO  halo2_proofs::timer] start commit to permutations
+[2024-07-28T07:38:49Z INFO  halo2_proofs::timer] end (0ms) commit to permutations
+[2024-07-28T07:38:49Z INFO  halo2_proofs::timer] start construct/commit lookup products
+[2024-07-28T07:38:50Z INFO  halo2_proofs::timer] end (1498ms) construct/commit lookup products
+[2024-07-28T07:38:50Z INFO  halo2_proofs::timer] start construct/commit shuffle products
+[2024-07-28T07:38:50Z INFO  halo2_proofs::timer] end (0ms) construct/commit shuffle products
+[2024-07-28T07:38:50Z INFO  halo2_proofs::timer] start commit to vanishing argument random poly
+[2024-07-28T07:38:50Z INFO  halo2_proofs::timer] end (9ms) commit to vanishing argument random poly
+[2024-07-28T07:38:50Z INFO  halo2_proofs::timer] start compute advice poly coefficient form
+[2024-07-28T07:38:51Z INFO  halo2_proofs::timer] end (365ms) compute advice poly coefficient form
+[2024-07-28T07:38:51Z INFO  halo2_proofs::timer] start evaluate h poly
+[2024-07-28T07:38:51Z DEBUG halo2_proofs::plonk::evaluation] evaluate_h inputs: challenges: [0x13b06c16d7774cf091a1d29625cda5ef4728050f242151d453bc4c002e45a42a, 0x14a3917dc4761ca864229db3703eea5e7ce9cab9e9c613d36c56d1df6983857b], y: 0x04cdb4b7a4cfd857d7fbd052a08bddf8d3921a028c7d4c1e4be2764b3e647546, beta: 0x2e6a0f787e93e4e15daf85b15c7a841d8d8f7babbf7e26ee278cf25ef15b99a3, gamma: 0x0087280043f0d5282ed04579b48f8186cd93b20374affc9bb03b44e9b57cfbfb, theta: 0x0a10d674dc7169225fef4adac5b405e2c37a6688ec81e2de8005e39dc572c04a
+[2024-07-28T07:38:51Z INFO  halo2_proofs::timer] start compute 205 advice cosets
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] end (897ms) compute 205 advice cosets
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] start compute 0 instance cosets
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] end (0ms) compute 0 instance cosets
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] start evaluate custom gates
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] end (84ms) evaluate custom gates
+[2024-07-28T07:38:52Z DEBUG halo2_proofs::plonk::evaluation] values after custom gates: poly (deg 8191) with sample values 0x27f949c416fc18e87e0b387d8b7daa50b937406330dbb1f140ef7b6177ad41f7, 0x0ce85065f618eeaad3e4e15ec6cc44bcf5cde65d7fcaa7c7160c4f8c8cbcab03, 0x11a2bad1c4e4a832223140e515d9435932380852ee7ebdca858ce5029f88a5b5
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] start evaluate permutations
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] end (0ms) evaluate permutations
+[2024-07-28T07:38:52Z DEBUG halo2_proofs::plonk::evaluation] values after permutations: poly (deg 8191) with sample values 0x27f949c416fc18e87e0b387d8b7daa50b937406330dbb1f140ef7b6177ad41f7, 0x0ce85065f618eeaad3e4e15ec6cc44bcf5cde65d7fcaa7c7160c4f8c8cbcab03, 0x11a2bad1c4e4a832223140e515d9435932380852ee7ebdca858ce5029f88a5b5
+[2024-07-28T07:38:52Z INFO  halo2_proofs::timer] start evaluate lookups
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] end (2308ms) evaluate lookups
+[2024-07-28T07:38:54Z DEBUG halo2_proofs::plonk::evaluation] values after lookups: poly (deg 8191) with sample values 0x1ab3f34a0b13fb4ac4c542ae9610707a89ba917e506143cd839367d9c583d85b, 0x199e191625b7fc91a7ba934f849bad14cb5cb50e44dd5fff66c2f0240d8e8c69, 0x10c6339daefa9c7bf3db468b76dc6a7fa57b014d37c1b4bfe87a350264d34d1a
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] start evaluate shuffles
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] end (0ms) evaluate shuffles
+[2024-07-28T07:38:54Z DEBUG halo2_proofs::plonk::evaluation] values after shuffles: poly (deg 8191) with sample values 0x1ab3f34a0b13fb4ac4c542ae9610707a89ba917e506143cd839367d9c583d85b, 0x199e191625b7fc91a7ba934f849bad14cb5cb50e44dd5fff66c2f0240d8e8c69, 0x10c6339daefa9c7bf3db468b76dc6a7fa57b014d37c1b4bfe87a350264d34d1a
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] end (3294ms) evaluate h poly
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] start construct vanishing argument
+[2024-07-28T07:38:54Z DEBUG halo2_proofs::plonk::vanishing::prover] leader h_commitments[0] is (0x27cfc3b1221f04c6cd6a092186911575d506a0b3b8bade52c73c2ec6d73e0aa9, 0x1f9368b76c26fcce4af244971b0f541422e958b26f553ff7cea14b7e1bc49c00)
+[2024-07-28T07:38:54Z DEBUG halo2_proofs::plonk::vanishing::prover] leader h_commitments[1] is (0x19a9f92de69f7a1f2818a92fca19eff5023129668fe2336b9af5df6264f30fc9, 0x2172f5b87b9845337d68804eaec71e9be8d9f1e11a2454c7927d7c9713af7ece)
+[2024-07-28T07:38:54Z DEBUG halo2_proofs::plonk::vanishing::prover] leader h_commitments[2] is (0x0eb69c286014c67b855034a0275a186f78f106a15f2e7e7165ac934772a1e8da, 0x1a1db2ab661b36f7cfe3215d0b9b701149f38128edf1ac8217c359c8065f0a0f)
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] end (44ms) construct vanishing argument
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] start compute and hash instance query evals
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] end (0ms) compute and hash instance query evals
+[2024-07-28T07:38:54Z INFO  halo2_proofs::timer] start compute and hash advice query evals
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] end (1487ms) compute and hash advice query evals
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] start compute and hash fixed query evals
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] end (85ms) compute and hash fixed query evals
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] start evaluate permutation commitments
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] end (0ms) evaluate permutation commitments
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] start evaluate lookup commitments
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] end (395ms) evaluate lookup commitments
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] start evaluate shuffles commitments
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] end (0ms) evaluate shuffles commitments
+[2024-07-28T07:38:56Z INFO  halo2_proofs::timer] start shplonk
+challenge v is ChallengeScalar { inner: 0x304a3f1456f1ce08758a88b351e179759c9f95c8b9004991f0f0bcfa8cb1f2a8, _marker: PhantomData<halo2_proofs::poly::kzg::multiopen::shplonk::V> }
+transcript is (0x01f7819689406ea5e8376d81a71c567237c7203c105b4c67c3350e236ee41d91, 0x113dd57bd81e9acc389f16f6e90ec39c7a7064f95f7c4f070f49dd3f1c0d97f7)
+transcript is (0x077efd22d8226b23c905cab3c55ce2ad615e0c745a28e3f2f7a02d2e77a988ca, 0x2e518cc693afb2ef69e80be097c68d8ee98f8ee7db3f97d846e13d56e4d079e6)
+[2024-07-28T07:38:57Z INFO  halo2_proofs::timer] end (642ms) shplonk
+[2024-07-28T07:38:57Z INFO  halo2_proofs::timer] end (15407ms) Prover 0 create_proof
+[2024-07-28T07:38:57Z INFO  halo2_proofs::timer] start artifact serialization
+[2024-07-28T07:38:57Z INFO  halo2_proofs::timer] end (0ms) artifact serialization

@@ -1,0 +1,246 @@
+[2024-07-28T08:11:49Z INFO  halo2_proofs::timer] start artifact deserialization
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] - Post absorb:
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 2
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Columns: 7
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] - Post padding:
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Columns: 10
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] - Post theta:
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 14
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Columns: 38
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] - Post rho/pi:
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 53
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Columns: 191
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] - Post chi:
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 52
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Columns: 195
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] - Post squeeze:
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Columns: 198
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Degree: 4
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Minimum rows: 61
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Total Lookups: 123
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] Total Columns: 198
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] num unused cells: 229
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] part_size absorb: 4
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] part_size theta: 2
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] part_size theta c: 2
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] part_size theta t: 3
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] part_size rho/pi: 3
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] part_size chi base: 3
+[2024-07-28T08:11:49Z DEBUG zkevm_circuits::keccak_circuit] uniform part sizes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+[2024-07-28T08:11:49Z DEBUG halo2_proofs::plonk] vk.transcript_repr = 0x1506e2979f2dfa8aedf1b223bc7b3280858909746715da15190e162825f96e72
+[2024-07-28T08:11:49Z INFO  halo2_proofs::timer] end (61ms) artifact deserialization
+[2024-07-28T08:11:49Z INFO  halo2_proofs::timer] start Prover 1 create_proof
+[2024-07-28T08:11:49Z INFO  halo2_proofs::plonk::distributed_prover::prover] prover index: 1
+[2024-07-28T08:11:49Z DEBUG halo2_proofs::plonk::distributed_prover::prover] prover network configuration: URL { addr: "127.0.0.1", port: 12346 }
+[2024-07-28T08:11:49Z DEBUG halo2_proofs::plonk::distributed_prover::prover] prover workload: ProverWorkload { advice_commitment_indexes: [102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204], evaluate_h_workloads: [EvaluateHWorkload { custom_gate_indexes: [], evaluate_permutation: false, lookup_indexes: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104], shuffle_indexes: [], horner_coefficient_power: 90 }] }
+[2024-07-28T08:11:49Z INFO  halo2_proofs::timer] start initialize sockets
+[2024-07-28T08:11:49Z INFO  halo2_proofs::timer] end (1ms) initialize sockets
+[2024-07-28T08:11:49Z INFO  halo2_proofs::timer] start wait for synchronized start
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] end (155ms) wait for synchronized start
+[2024-07-28T08:11:50Z INFO  halo2_proofs::plonk::distributed_prover::prover] number of circuit instances: 1
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] - Post absorb:
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 2
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Columns: 7
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] - Post padding:
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Columns: 10
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] - Post theta:
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 14
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Columns: 38
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] - Post rho/pi:
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 53
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Columns: 191
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] - Post chi:
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 52
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Columns: 195
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] - Post squeeze:
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Lookups: 1
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Columns: 198
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Degree: 4
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Minimum rows: 61
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Total Lookups: 123
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] Total Columns: 198
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] num unused cells: 229
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] part_size absorb: 4
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] part_size theta: 2
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] part_size theta c: 2
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] part_size theta t: 3
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] part_size rho/pi: 3
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] part_size chi base: 3
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit] uniform part sizes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] start construct instance polys
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] end (0ms) construct instance polys
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] start construct/commit advice and generate challenge
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] start phase 0
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] start instance 0
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] start synthesize circuit
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: None }
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: None }
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: None }
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [c5, d2, 46, 1, 86, f7, 23, 3c, 92, 7e, 7d, b2, dc, c7, 3, c0, e5, 0, b6, 53, ca, 82, 27, 3b, 7b, fa, d8, 4, 5d, 85, a4, 70]
+[2024-07-28T08:11:50Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x0000000000000000000000000000000000000000000000000000000000000000) }
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] end (737ms) synthesize circuit
+[2024-07-28T08:11:50Z INFO  halo2_proofs::timer] start compute advice commitments
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] end (1382ms) compute advice commitments
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] start send advice commitments
+[2024-07-28T08:11:52Z DEBUG halo2_proofs::plonk::distributed_prover::structs] sent commitment slice 1 with len 101
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] end (0ms) send advice commitments
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] start receive aggregated advice commitments
+[2024-07-28T08:11:52Z DEBUG halo2_proofs::plonk::distributed_prover::structs] received commitment slice 0 with len 203
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] end (9ms) receive aggregated advice commitments
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] end (2168ms) instance 0
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] start generate challenges
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] end (0ms) generate challenges
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] end (2168ms) phase 0
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] start phase 1
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] start instance 0
+[2024-07-28T08:11:52Z INFO  halo2_proofs::timer] start synthesize circuit
+[2024-07-28T08:11:52Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T08:11:52Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x212f93f5c0b13790f0487796742214d6f4d0167270a8257f5c420b061b9d07b4) }
+[2024-07-28T08:11:52Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T08:11:52Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x212f93f5c0b13790f0487796742214d6f4d0167270a8257f5c420b061b9d07b4) }
+[2024-07-28T08:11:52Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [cb, df, d9, de, e5, fa, ad, 38, 18, d6, b0, 6f, 95, a2, 19, fd, 29, b, e, 17, 6, f6, a8, 2e, 5a, 59, 5b, 9c, e9, fa, ca, 62]
+[2024-07-28T08:11:52Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x212f93f5c0b13790f0487796742214d6f4d0167270a8257f5c420b061b9d07b4) }
+[2024-07-28T08:11:53Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] hash: [c5, d2, 46, 1, 86, f7, 23, 3c, 92, 7e, 7d, b2, dc, c7, 3, c0, e5, 0, b6, 53, ca, 82, 27, 3b, 7b, fa, d8, 4, 5d, 85, a4, 70]
+[2024-07-28T08:11:53Z DEBUG zkevm_circuits::keccak_circuit::keccak_packed_multi] data rlc: Value { inner: Some(0x0000000000000000000000000000000000000000000000000000000000000000) }
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (706ms) synthesize circuit
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] start compute advice commitments
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (0ms) compute advice commitments
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] start send advice commitments
+[2024-07-28T08:11:53Z DEBUG halo2_proofs::plonk::distributed_prover::structs] sent commitment slice 1 with len 0
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (0ms) send advice commitments
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] start receive aggregated advice commitments
+[2024-07-28T08:11:53Z DEBUG halo2_proofs::plonk::distributed_prover::structs] received commitment slice 0 with len 2
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (0ms) receive aggregated advice commitments
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (807ms) instance 0
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] start generate challenges
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (0ms) generate challenges
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (807ms) phase 1
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] end (2979ms) construct/commit advice and generate challenge
+[2024-07-28T08:11:53Z INFO  halo2_proofs::timer] start construct/commit permuted values for lookups
+[2024-07-28T08:12:14Z INFO  halo2_proofs::timer] end (21044ms) construct/commit permuted values for lookups
+[2024-07-28T08:12:14Z INFO  halo2_proofs::timer] start commit to permutations
+[2024-07-28T08:12:14Z INFO  halo2_proofs::timer] end (0ms) commit to permutations
+[2024-07-28T08:12:14Z INFO  halo2_proofs::timer] start construct/commit lookup products
+[2024-07-28T08:12:20Z INFO  halo2_proofs::timer] end (6616ms) construct/commit lookup products
+[2024-07-28T08:12:20Z INFO  halo2_proofs::timer] start construct/commit shuffle products
+[2024-07-28T08:12:20Z INFO  halo2_proofs::timer] end (0ms) construct/commit shuffle products
+[2024-07-28T08:12:20Z INFO  halo2_proofs::timer] start commit to vanishing argument random poly
+[2024-07-28T08:12:20Z INFO  halo2_proofs::timer] end (25ms) commit to vanishing argument random poly
+[2024-07-28T08:12:20Z INFO  halo2_proofs::timer] start compute advice poly coefficient form
+[2024-07-28T08:12:23Z INFO  halo2_proofs::timer] end (2987ms) compute advice poly coefficient form
+[2024-07-28T08:12:23Z INFO  halo2_proofs::timer] start evaluate sub h poly
+[2024-07-28T08:12:23Z INFO  halo2_proofs::timer] start evaluate sub h poly 1/1
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] evaluate_h_partial inputs: challenges: [0x13b06c16d7774cf091a1d29625cda5ef4728050f242151d453bc4c002e45a42a, 0x14a3917dc4761ca864229db3703eea5e7ce9cab9e9c613d36c56d1df6983857b], y: 0x04cdb4b7a4cfd857d7fbd052a08bddf8d3921a028c7d4c1e4be2764b3e647546, beta: 0x2e6a0f787e93e4e15daf85b15c7a841d8d8f7babbf7e26ee278cf25ef15b99a3, gamma: 0x0087280043f0d5282ed04579b48f8186cd93b20374affc9bb03b44e9b57cfbfb, theta: 0x0a10d674dc7169225fef4adac5b405e2c37a6688ec81e2de8005e39dc572c04a
+[2024-07-28T08:12:23Z INFO  halo2_proofs::timer] start compute constraint column dependency
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] custom gates requires 0 fixed columns, 0 advice columns, 0 instance columns
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 0 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 1 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 2 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 3 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 4 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 5 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 6 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 7 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 8 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 9 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 10 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 11 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 12 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 13 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 14 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 15 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 16 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 17 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 18 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 19 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 20 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 21 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 22 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 23 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 24 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 25 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 26 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 27 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 28 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 105 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 106 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 107 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 108 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 109 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 110 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 111 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 112 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 113 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 114 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 115 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 116 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 117 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 118 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 119 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 120 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 121 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] skip lookup 122 not contained in lookup indexes
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] lookups requires 4 fixed columns, 122 advice columns, 0 instance columns
+[2024-07-28T08:12:23Z DEBUG halo2_proofs::plonk::evaluation] shuffles requires 0 fixed columns, 0 advice columns, 0 instance columns
+[2024-07-28T08:12:23Z INFO  halo2_proofs::timer] end (0ms) compute constraint column dependency
+[2024-07-28T08:12:23Z INFO  halo2_proofs::plonk::evaluation] evaluate_h_partial requires 4 fixed columns, 122 advice columns, 0 instance columns
+[2024-07-28T08:12:23Z INFO  halo2_proofs::timer] start compute 122/205 advice cosets
+[2024-07-28T08:12:26Z INFO  halo2_proofs::plonk::evaluation] computed 122 advice cosets and re-used 0 cached cosets
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] end (2329ms) compute 122/205 advice cosets
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] start compute 0/0 instance cosets
+[2024-07-28T08:12:26Z INFO  halo2_proofs::plonk::evaluation] computed 0 instance cosets and re-used 0 cached cosets
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] end (0ms) compute 0/0 instance cosets
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] start evaluate custom gates
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] end (9ms) evaluate custom gates
+[2024-07-28T08:12:26Z DEBUG halo2_proofs::plonk::evaluation] values after custom gates: poly (deg 8191) with sample values 0x0000000000000000000000000000000000000000000000000000000000000000, 0x0000000000000000000000000000000000000000000000000000000000000000, 0x0000000000000000000000000000000000000000000000000000000000000000
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] start evaluate permutations
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] end (0ms) evaluate permutations
+[2024-07-28T08:12:26Z DEBUG halo2_proofs::plonk::evaluation] values after permutations: poly (deg 8191) with sample values 0x0000000000000000000000000000000000000000000000000000000000000000, 0x0000000000000000000000000000000000000000000000000000000000000000, 0x0000000000000000000000000000000000000000000000000000000000000000
+[2024-07-28T08:12:26Z INFO  halo2_proofs::timer] start evaluate lookups
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] end (5438ms) evaluate lookups
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::evaluation] values after lookups: poly (deg 8191) with sample values 0x27cda080c2246082523e6964fc86667e496bc424c12c0b9ef6c858d8ac5db261, 0x12b0f0077940206a1fd3b014c4d3f6c66d856431a36ebc64a3be43ba2b5b1b70, 0x02dc80d7e8a32e62e39f709ba573d6d9f3dce82989ff5136f964362e63301a0e
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] start evaluate shuffles
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] end (0ms) evaluate shuffles
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::evaluation] values after shuffles: poly (deg 8191) with sample values 0x27cda080c2246082523e6964fc86667e496bc424c12c0b9ef6c858d8ac5db261, 0x12b0f0077940206a1fd3b014c4d3f6c66d856431a36ebc64a3be43ba2b5b1b70, 0x02dc80d7e8a32e62e39f709ba573d6d9f3dce82989ff5136f964362e63301a0e
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::evaluation] accumulated y: 380
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::distributed_prover::prover] y_pow accumulated for evaluation #0: 380
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::distributed_prover::prover] h_poly after evaluation #0 multiplying with horner coefficient 0x1e486d96858e4af5d912e8dd0f400fdd7ef20be118d3b10b6866571dc33d5aec: poly (deg 8191) with sample values 0x08e20f82efdefd7e75484f0f3125ce24ee11047f0ff60942c53f3ed62a8297f0, 0x2050d85b3d795085e56070c55585af5ade6343913a11f6964240d999efc11931, 0x036f47f47c8fbc7e3e1f7d5ef35b8db22c6e6c0796f6d524916c31c448bfcd82
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] end (7780ms) evaluate sub h poly 1/1
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] end (7784ms) evaluate sub h poly
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] start send sub h poly
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::distributed_prover::structs] sent poly (deg 8191) with sample values 0x08e20f82efdefd7e75484f0f3125ce24ee11047f0ff60942c53f3ed62a8297f0, 0x2050d85b3d795085e56070c55585af5ade6343913a11f6964240d999efc11931, 0x036f47f47c8fbc7e3e1f7d5ef35b8db22c6e6c0796f6d524916c31c448bfcd82
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] end (2ms) send sub h poly
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::vanishing::prover] worker h_commitments is (0x1f424385dfeb2ea11fcc841054e25e9d50ac8faf4def8000db9aabf216b95695, 0x155d2cfed2dd356f290e437447553149c407f3161ba56f478f4c135d0be76411)
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::vanishing::prover] worker h_commitments is (0x014f0df8cde2c3d4d8ede5b6fc1826184e9bc1cf39920745c60c5ed0c86c471f, 0x24a684eb440a74907ddaaec6b7713433faf38cd6efb36be015cc14e6b028e88c)
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::vanishing::prover] worker h_commitments is (0x0f5b3b68a2ce8c117284474033f2186da904d66ddcbff549454b1089dab37968, 0x26d7a12a67b5282e801217fc5d64d27492e32ad3aed57ab65730dc6dfc7f7581)
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::distributed_prover::structs] sent commitment slice 0 with len 3
+[2024-07-28T08:12:31Z DEBUG halo2_proofs::plonk::distributed_prover::structs] received commitment slice 0 with len 3
+leader challenge is ChallengeScalar { inner: 0x03fc5606e1e48c764671d3edd647aa32b4c6763a717619e426efdf1d9ff991ec, _marker: PhantomData<halo2_proofs::plonk::X> }
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] start compute and hash instance query evals
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] end (0ms) compute and hash instance query evals
+[2024-07-28T08:12:31Z INFO  halo2_proofs::timer] start compute and hash advice query evals
+[2024-07-28T08:12:50Z INFO  halo2_proofs::timer] end (19198ms) compute and hash advice query evals
+[2024-07-28T08:12:50Z INFO  halo2_proofs::timer] start compute and hash fixed query evals
+[2024-07-28T08:12:51Z INFO  halo2_proofs::timer] end (237ms) compute and hash fixed query evals
+[2024-07-28T08:12:51Z INFO  halo2_proofs::timer] start evaluate permutation commitments
+[2024-07-28T08:12:51Z INFO  halo2_proofs::timer] end (0ms) evaluate permutation commitments
+[2024-07-28T08:12:51Z INFO  halo2_proofs::timer] start evaluate lookup commitments
+[2024-07-28T08:12:55Z INFO  halo2_proofs::timer] end (4051ms) evaluate lookup commitments
+[2024-07-28T08:12:55Z INFO  halo2_proofs::timer] start evaluate shuffles commitments
+[2024-07-28T08:12:55Z INFO  halo2_proofs::timer] end (0ms) evaluate shuffles commitments
+[2024-07-28T08:12:55Z INFO  halo2_proofs::timer] start shplonk
+challenge v is ChallengeScalar { inner: 0x304a3f1456f1ce08758a88b351e179759c9f95c8b9004991f0f0bcfa8cb1f2a8, _marker: PhantomData<halo2_proofs::poly::kzg::multiopen::shplonk::V> }
+transcript1 is (0x0981faea722c4fc3fb91566ff578a59b1a59c6683181100e44d26389a6245e96, 0x224a900d3ccdc48221b5d4c68ef876a4c9b053d440f6cf03ffd87bb8fdec9537)
+transcript2 is (0x0c169cab56a7013a36414cd9c1651c87429fdebec3e17a8e9d94beab8fefd033, 0x1081b6680455bc6273b3833a94eb19651748685171c5d5747243a53e2f2c334f)
+[2024-07-28T08:12:56Z DEBUG halo2_proofs::plonk::distributed_prover::structs] sent commitment slice 0 with len 2
+[2024-07-28T08:12:56Z INFO  halo2_proofs::timer] end (935ms) shplonk
+[2024-07-28T08:12:56Z DEBUG zmq] socket dropped
+[2024-07-28T08:12:56Z DEBUG zmq] socket dropped
+[2024-07-28T08:12:56Z DEBUG zmq] context dropped
+[2024-07-28T08:12:56Z INFO  halo2_proofs::timer] end (66201ms) Prover 1 create_proof
