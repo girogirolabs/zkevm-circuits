@@ -39,17 +39,8 @@ test-all: fmt doc clippy test_doc test_benches test ## Run all the CI checks loc
 super_bench: ## Run Super Circuit benchmarks
 	@cargo test --profile bench bench_super_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
 
-evm_single: ## Run Evm Circuit benchmarks
-	@cargo test --profile bench bench_evm_circuit_prover_single -p circuit-benchmarks --features benches  -- --nocapture
-
-evm_leader: ## Run Evm Circuit benchmarks
-	@cargo test --profile bench bench_evm_circuit_prover_leader -p circuit-benchmarks --features benches  -- --nocapture
-
-evm_worker_0: ## Run Evm Circuit benchmarks
-	@cargo test --profile bench bench_evm_circuit_prover_worker_0 -p circuit-benchmarks --features benches  -- --nocapture
-
-evm_worker_1: ## Run Evm Circuit benchmarks
-	@cargo test --profile bench bench_evm_circuit_prover_worker_1 -p circuit-benchmarks --features benches  -- --nocapture
+evm_bench: ## Run Evm Circuit benchmarks
+	@cargo test --profile bench bench_evm_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
 
 state_bench: ## Run State Circuit benchmarks
 	@cargo test --profile bench bench_state_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
@@ -57,17 +48,8 @@ state_bench: ## Run State Circuit benchmarks
 mpt_bench: ## Run MPT Circuit benchmarks
 	@cargo test --profile bench bench_mpt_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
 
-keccak_single: ## Run Packed Multi Keccak Circuit benchmarks
-	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_single -p circuit-benchmarks --features benches  -- --nocapture
-
-keccak_leader: ## Run Packed Multi Keccak Circuit benchmarks
-	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_leader -p circuit-benchmarks --features benches  -- --nocapture
-
-keccak_worker_0: ## Run Packed Multi Keccak Circuit benchmarks
-	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_worker_0 -p circuit-benchmarks --features benches  -- --nocapture
-
-keccak_worker_1: ## Run Packed Multi Keccak Circuit benchmarks
-	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover_worker_1 -p circuit-benchmarks --features benches  -- --nocapture
+packed_multi_keccak_bench: ## Run Packed Multi Keccak Circuit benchmarks
+	@cargo test --profile bench bench_packed_multi_keccak_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture
 
 bytecode_bench: ## Run Bytecode Circuit benchmarks
 	@cargo test --profile bench bench_bytecode_circuit_prover -p circuit-benchmarks --features benches  -- --nocapture

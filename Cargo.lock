@@ -505,6 +505,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "circuit-helper"
+version = "0.1.0"
+dependencies = [
+ "bus-mapping",
+ "eth-types",
+ "halo2_proofs",
+ "mock",
+ "rand",
+ "rand_xorshift",
+ "serde",
+ "zkevm-circuits",
+]
+
+[[package]]
 name = "clap"
 version = "3.2.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -951,6 +965,14 @@ dependencies = [
  "libc",
  "redox_users",
  "winapi",
+]
+
+[[package]]
+name = "distributed-prover"
+version = "0.1.0"
+dependencies = [
+ "circuit-helper",
+ "env_logger",
 ]
 
 [[package]]
@@ -1813,9 +1835,12 @@ dependencies = [
  "ff",
  "group",
  "halo2curves",
+ "log",
  "rand_chacha",
  "rand_core",
  "rayon",
+ "serde",
+ "serde_json",
  "sha3 0.9.1",
  "tracing",
  "zmq",

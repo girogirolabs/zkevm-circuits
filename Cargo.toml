@@ -7,6 +7,8 @@ members = [
     "gadgets",
     "integration-tests",
     "circuit-benchmarks",
+    "circuit-helper",
+    "distributed-prover",
     "eth-types",
     "external-tracer",
     "mock",

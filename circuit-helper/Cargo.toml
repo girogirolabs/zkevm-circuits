@@ -1,0 +1,16 @@
+[package]
+name = "circuit-helper"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+halo2_proofs = { path = "../../halo2/halo2_proofs" }
+bus-mapping = { path = "../bus-mapping",  features = ["test"] }
+mock = { path = "../mock" }
+eth-types = { path = "../eth-types" }
+zkevm-circuits = { path = "../zkevm-circuits", features = ["test-circuits"] }
+rand_xorshift = "0.3"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
