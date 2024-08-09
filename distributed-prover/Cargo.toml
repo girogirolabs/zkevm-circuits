@@ -9,3 +9,6 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 circuit-helper = { path = "../circuit-helper"  }
 env_logger = "0.9"
+
+[features]
+gpu = ["circuit-helper/gpu"]
