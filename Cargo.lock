@@ -1098,12 +1098,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "env"
-version = "0.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "876927d21ef1ae98001c8c35a1d8dfd682136914b23ef04276820fa6d43c3630"
-
-[[package]]
 name = "env_logger"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2198,7 +2192,6 @@ name = "integration-tests"
 version = "0.1.0"
 dependencies = [
  "bus-mapping",
- "env",
  "env_logger",
  "eth-types",
  "ethers",
